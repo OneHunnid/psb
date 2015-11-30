@@ -1,6 +1,6 @@
 var Home = (function() {
 
-	// var myFirebaseRef = new Firebase("https://practicesafebrowsing.firebaseIO.com");
+	var myFirebaseRef = new Firebase("https://practicesafebrowsing.firebaseIO.com");
 
 	var homeData = {
 		title: 'Practice Safe Browsing',
