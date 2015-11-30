@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Practice Safe Browsing</title>
+
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="styles/main.less.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<!-- Header -->
+	<header class="header">
+		<div class="container">
+			<div id="navigation" class="navigation">
+				<ul>
+					<li id="nav-home"><a href="#">Home</a></li>
+					<li id="nav-faq"><a href="#">F.A.Q.</a></li>
+					<li id="nav-submit"><a href="#">Submit a tool</a></li>
+				</ul>
+			</div>
+			<div class="tweet"><a href="#"><span><img src="assets/twitter.png"></span>Share on Twitter</a></div>
+		</div>
+
+		<section id="banner" class="container banner"></section>
+
+	<!-- Banner Partial Home -->
+	<script id="partial-banner-home" type="underscore/template">
+		<h2 class="banner__title"><%= title%></h2>
+		<div class="banner__desc"><%= desc%></div>
+	</script>
+
+	<!-- Banner Partial FAQ -->
+	<script id="partial-banner-faq" type="underscore/template">
+		<div class="faq__wrapper">
+		<div class="faq__title"><%= title%></div>
+			<% for (var i = 0; i < list.length; i++){ %>
+				<div class="faq">
+					<div class="faq__question"> <%= list[ i ].question %> </div>
+					<div class="faq__answer"> <%= list[ i ].answer %> </div>
+				</div>
+			<% } %>
+		</div>
+	</script>
+
+	<!-- Banner Partial Submit a tool -->
+	<script id="partial-banner-submit" type="underscore/template">
+		<h2 class="submit__title"><%= title%></h2>
+		<div class="submit__desc"><%= desc%></div>
+	</script>
+
+	</header>
+
+	<!-- Main Content -->
+	<main class="main">
+		<div class="container" id="main-content"></div>
+	</main> <!-- End Main Content -->
+
+	<!-- Footer -->
+	<footer class="footer"></footer>
+
+	<!--  ROUTES  -->
+	<script src="scripts/director.min.js"></script>
+	<script src="scripts/routes.js"></script>
+
+	<!-- DOM -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+	<!-- VIEWS -->
+	<script src="scripts/views/home.js"></script>
+
+	<!-- ROUTER DIRECTOR -->
+	<script src="scripts/app.js"></script>
+
+</body>
+</html>

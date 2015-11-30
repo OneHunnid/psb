@@ -1,0 +1,37 @@
+{
+  "name": "psb",
+  "version": "1.0.0",
+  "description": "SPAKIT is a simple framework for creating single page applications for the web.",
+  "main": "index.js",
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "jquery": "^2.1.4",
+    "less": "^2.5.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneHunnid/SPAKIT.git"
+  },
+  "keywords": [
+    "Web App",
+    "template",
+    "boilerplate",
+    "framework",
+    "skeleton",
+    "SPA",
+    "template",
+    "developer",
+    "single page application"
+  ],
+  "author": "Chris Limbrick & Mottaqui Karim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OneHunnid/SPAKIT/issues"
+  },
+  "homepage": "https://github.com/OneHunnid/SPAKIT#readme"
+}

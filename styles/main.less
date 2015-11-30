@@ -1,0 +1,229 @@
+/* Import
+*******************************/
+@import "normalize.less";
+
+*, *:before, &:after {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* html is set to 62.5% so that all the REM measurements are based on 10px sizing */
+html { font-size: 62.5%; }
+
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #010101; 
+  background-color: #f8f8f8;
+
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto; 
+  padding: 0 20px;
+  clear: both;
+}
+
+
+h1 { 
+	font-size: 4.0rem; 
+	line-height: 1.6rem;
+	margin: 0;
+}
+
+h2 { 
+	font-size: 3.6rem; 
+	line-height: 1.6rem;
+	margin: 0;
+}
+
+h3 { 
+	font-size: 3.0rem; 
+	line-height: 1.6rem;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Variables
+*******************************/
+
+
+/* Mixins
+*******************************/
+
+
+/* Main LESS
+*******************************/
+
+.header {
+	background: -webkit-linear-gradient(90deg, #514378, #42346b);
+	background: -o-linear-gradient(90deg, #514378, #42346b);
+	background: -moz-linear-gradient(90deg, #514378, #42346b);
+	background: linear-gradient(90deg, #514378, #42346b);
+	border-top: solid 4px #fff;
+	padding-top: 10px;
+}
+
+.navigation {
+	float: left;
+
+	ul {
+	    margin: 0;
+	    padding: 0;
+		
+		li {
+			display: inline;
+			padding-right: 10px;
+			color: #fff;
+			font-size: 12px;
+			font-weight: 600;
+			letter-spacing: .5px;
+
+			a {
+				color: #fff;
+
+				&:hover {
+					opacity: .8;
+				}
+			}
+		}
+	}
+}
+
+
+.tweet {
+	float: right;
+
+	a {
+		color: #fff;
+	    font-size: 12px;
+	    font-weight: 600;
+	    letter-spacing: .5px;
+	
+	    &:hover {
+	    	opacity: .8;
+	    }
+	}
+
+	img {
+	    margin-right: 7px;
+	    width: 15px;
+	    vertical-align: middle;
+	}
+}
+
+.banner {
+    padding: 125px 20px 175px 20px;
+    color: #fff;
+    min-height: 430px;
+
+    .banner__title {
+    	font-size: 40px;
+    	font-weight: 800;
+    	margin-bottom:25px;
+    	letter-spacing: 1px;
+    	line-height: 4rem;
+    }
+
+    .banner__desc {
+		font-size: 18px;
+		font-weight: 400;
+		max-width: 550px;
+		letter-spacing: .5px;
+    }
+}
+
+.faq__wrapper {
+	display: inline-block;
+}
+
+.faq__title {
+	font-size: 40px;
+	font-weight: 800;
+	margin-bottom:50px;
+	letter-spacing: 1px;
+	line-height: 4rem;
+}
+
+.faq {
+	float: left;
+    max-width: 33%;
+    padding-right: 15px;
+
+    &:last-child { padding-right: 0; }
+
+	.faq__question {
+	    font-size: 16px;
+	    font-weight: 600;
+	    letter-spacing: .5px;
+	    text-transform: uppercase;
+        margin-bottom: 15px;
+	}
+
+	.faq__answer {
+		letter-spacing: .5px;
+	}
+
+}
+
+.submit__title {
+	font-size: 40px;
+	font-weight: 800;
+	margin-bottom:25px;
+	letter-spacing: 1px;
+	line-height: 4rem;
+}
+
+.submit__desc {
+	font-size: 18px;
+	font-weight: 400;
+	max-width: 450px;
+	letter-spacing: .5px;
+}
+
+
+
+@media (max-width: 400px) {
+
+	.navigation {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	.tweet {
+		width: 100%;
+		text-align: center;
+	}
+
+	.banner {
+	    padding: 50px 20px 50px 20px;
+	    color: #fff;
+	    min-height: 300px;
+	}
+
+	.faq {
+		float:none;
+		display: inline;
+    }
+
+}
+
+
+
+
+
+
+
+
