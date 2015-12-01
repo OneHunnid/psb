@@ -197,12 +197,13 @@ a {
 }
 
 .filters {
+	cursor: pointer;
 
 	ul {
 	    list-style-type: none;
 	    margin: 0;
 	    padding: 0;
-	    
+
 		li {
 			display: inline-block;
 			padding-right: 15px;
@@ -213,6 +214,10 @@ a {
 			text-transform: uppercase;
 
 			&:last-child { padding-right: 0; }
+
+			&:hover {
+				color: #424141;
+			}
 		}
 	}
 }
