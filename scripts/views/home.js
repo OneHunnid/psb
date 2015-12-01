@@ -58,9 +58,62 @@ var Home = (function() {
 		$('#banner').html(submitPartialCompiled( submitData ));
 	});
 
-	myFirebaseRef.orderByKey().on("child_added", function(snapshot) {
-		console.log(snapshot.key());
+	// Retrieving all category method 1
+	myFirebaseRef.once("value", function(snapshot) {
+		var data = snapshot.val();
+		console.log(data.all.Disconnect);
 	});
+
+	// Retrieves all category method 2
+	myFirebaseRef.once("value", function(snapshot) {
+		var categoryAll = snapshot.child("all");
+		var allTools = categoryAll.val();
+		console.log(allTools.Disconnect);
+	});
+
+	// // Retrieves browser category
+	// myFirebaseRef.once("value", function(snapshot) {
+	// 	var categoryBrowser = snapshot.child("browser");
+	// 	var browserTools = categoryBrowser.val();
+	// 	console.log(browserTools);
+	// });
+
+	// // Retrieves chat category
+	// myFirebaseRef.once("value", function(snapshot) {
+	// 	var categorychat = snapshot.child("chat");
+	// 	var chatTools = categorychat.val();
+	// 	console.log(chatTools);
+	// });
+
+	// // Retrieves email category
+	// myFirebaseRef.once("value", function(snapshot) {
+	// 	var categoryEmail = snapshot.child("email");
+	// 	var emailTools = categoryEmail.val();
+	// 	console.log(emailTools);
+	// });
+
+	// // Retrieves encryption category
+	// myFirebaseRef.once("value", function(snapshot) {
+	// 	var categoryEncryption = snapshot.child("encryption");
+	// 	var encryptionTools = categoryEncryption.val();
+	// 	console.log(encryptionTools);
+	// });
+
+	// // Retrieves OS category
+	// myFirebaseRef.once("value", function(snapshot) {
+	// 	var categoryOS = snapshot.child("OS");
+	// 	var osTools = categoryOS.val();
+	// 	console.log(osTools);
+	// });
+
+	// // Retrieves storage category
+	// myFirebaseRef.once("value", function(snapshot) {
+	// 	var categoryStorage = snapshot.child("storage");
+	// 	var storageTools = categoryStorage.val();
+	// 	console.log(storageTools);
+	// });
+
+
 
 	
 
