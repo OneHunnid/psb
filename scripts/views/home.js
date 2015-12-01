@@ -58,8 +58,8 @@ var Home = (function() {
 		$('#banner').html(submitPartialCompiled( submitData ));
 	});
 
-	myFirebaseRef.child('all/').orderByKey().on("child_added", function(snapshot) {
-		console.log(snapshot.child());
+	myFirebaseRef.orderByKey().on("child_added", function(snapshot) {
+		console.log(snapshot.key());
 	});
 
 	
