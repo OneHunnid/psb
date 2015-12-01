@@ -29,6 +29,12 @@
 		</div>
 
 		<section id="banner" class="container banner"></section>
+	</header>
+
+	<!-- Main Content -->
+	<main class="main">
+		<div class="container" id="main-content"></div>
+	</main> <!-- End Main Content -->
 
 	<!-- Banner Partial Home -->
 	<script id="partial-banner-home" type="underscore/template">
@@ -55,12 +61,20 @@
 		<div class="submit__desc"><%= desc%></div>
 	</script>
 
-	</header>
-
-	<!-- Main Content -->
-	<main class="main">
-		<div class="container" id="main-content"></div>
-	</main> <!-- End Main Content -->
+	<!-- Filter & Tools Partial -->
+	<script id="partial-tools" type="underscore/template">
+		<div class="filters">
+			<ul>
+				<li id="filter-all">All Categories</li>
+				<li id="filter-browswer">Browser</li>
+				<li id="filter-chat">Chat</li>
+				<li id="filter-email">Email</li>
+				<li id="filter-encryption">Encryption</li>
+				<li id="filter-storage">storage</li>
+			</ul>
+		</div>
+		
+	</script>
 
 	<!-- Footer -->
 	<footer class="footer"></footer>
