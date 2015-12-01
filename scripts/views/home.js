@@ -41,6 +41,9 @@ var Home = (function() {
 	var submitPartial = $('#partial-banner-submit').html();
 		submitPartialCompiled = _.template( submitPartial );
 
+	var toolsPartial =$('#partial-tools').html();
+		toolsPartialCompiled = _.template( toolsPartial );
+
 	// DOM Handlers
 
 	$('#nav-home').click(function() {
@@ -55,6 +58,11 @@ var Home = (function() {
 		$('#banner').html(submitPartialCompiled( submitData ));
 	});
 
+	myFirebaseRef.child('all/').orderByKey().on("child_added", function(snapshot) {
+		console.log(snapshot.child());
+	});
+
+	
 
 	// KICKSTART VIEW
 	function initHome() {
@@ -63,7 +71,7 @@ var Home = (function() {
 		$('#banner').html(infoPartialCompiled( homeData ));
 
 		// load main content
-		$('#main-content').html("Tool cards go here");
+		$('#main-content').html(toolsPartialCompiled());
 
 		// bind events
 
