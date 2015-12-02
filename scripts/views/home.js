@@ -59,24 +59,63 @@ var Home = (function() {
 
 	// DOM Handlers
 
-	$('#nav-home').click(function() {
+	$('body').on('click','#nav-home', function(e) {
+		e.preventDefault();
+
 		$('#banner').html(infoPartialCompiled( homeData ));
 	});
 
-	$('#nav-faq').click(function() {
+	$('body').on('click','#nav-faq', function(e) {
+		e.preventDefault();
+
 		$('#banner').html(faqPartialCompiled( faqData ));
 	});
 
-	$('#nav-submit').click(function() {
+	$('body').on('click','#nav-submit', function(e) {
+		e.preventDefault();
+
 		$('#banner').html(submitPartialCompiled( submitData ));
 	});
 
+	// Filter navigation buttons
 
+	$('body').on('click', '#filter-browser', function(e) {
+		e.preventDefault();
 
-	// Change value of filterToSelect respectively 
-	$('#filter-browser').click(function() {
 		filterToSelect = "browser";
 	});
+
+	$('body').on('click', '#filter-chat', function(e) {
+		e.preventDefault();
+		
+		filterToSelect = "chat";
+	});
+
+	$('body').on('click', '#filter-email', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "email";
+	});
+
+	$('body').on('click', '#filter-encryption', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "encryption";
+	});
+
+	$('body').on('click', '#filter-os', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "os";
+	});
+
+	$('body').on('click', '#filter-storage', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "storage";
+	});
+
+
 
 	var filterToSelect = "all";
 
