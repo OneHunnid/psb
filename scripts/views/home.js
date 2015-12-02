@@ -44,6 +44,7 @@ var Home = (function() {
 	var toolsPartial =$('#partial-tools').html();
 		toolsPartialCompiled = _.template( toolsPartial );
 
+
 	// DOM Handlers
 
 	$('#nav-home').click(function() {
@@ -58,64 +59,34 @@ var Home = (function() {
 		$('#banner').html(submitPartialCompiled( submitData ));
 	});
 
-	// Retrieving all category method 1
+
+
+	// Change value of filterToSelect respectively 
+	$('#filter-browser').click(function() {
+		filterToSelect = "browser";
+	});
+
+	var filterToSelect = "all";
+
+	// Retrieving data from Firebase
 	myFirebaseRef.once("value", function(snapshot) {
 		var data = snapshot.val();
-		console.log(data.all.Disconnect);
+		
+		for( var filter in data ) {
+			if ( filter !== filterToSelect ) {
+				continue;
+			}
+
+		    var currentFilter = data[ filter ];
+		    // console.log( currentFilter );
+		    
+		    for( var item in currentFilter ) {
+		        console.log( item, currentFilter[ item ], filter );
+		        // you can access stuff like currentFilter[ item ].desc here
+		    }
+		}
 	});
 
-	// Retrieves all category method 2
-	myFirebaseRef.once("value", function(snapshot) {
-		var categoryAll = snapshot.child("all");
-		var allTools = categoryAll.val();
-		console.log(allTools.Disconnect);
-	});
-
-	// // Retrieves browser category
-	// myFirebaseRef.once("value", function(snapshot) {
-	// 	var categoryBrowser = snapshot.child("browser");
-	// 	var browserTools = categoryBrowser.val();
-	// 	console.log(browserTools);
-	// });
-
-	// // Retrieves chat category
-	// myFirebaseRef.once("value", function(snapshot) {
-	// 	var categorychat = snapshot.child("chat");
-	// 	var chatTools = categorychat.val();
-	// 	console.log(chatTools);
-	// });
-
-	// // Retrieves email category
-	// myFirebaseRef.once("value", function(snapshot) {
-	// 	var categoryEmail = snapshot.child("email");
-	// 	var emailTools = categoryEmail.val();
-	// 	console.log(emailTools);
-	// });
-
-	// // Retrieves encryption category
-	// myFirebaseRef.once("value", function(snapshot) {
-	// 	var categoryEncryption = snapshot.child("encryption");
-	// 	var encryptionTools = categoryEncryption.val();
-	// 	console.log(encryptionTools);
-	// });
-
-	// // Retrieves OS category
-	// myFirebaseRef.once("value", function(snapshot) {
-	// 	var categoryOS = snapshot.child("OS");
-	// 	var osTools = categoryOS.val();
-	// 	console.log(osTools);
-	// });
-
-	// // Retrieves storage category
-	// myFirebaseRef.once("value", function(snapshot) {
-	// 	var categoryStorage = snapshot.child("storage");
-	// 	var storageTools = categoryStorage.val();
-	// 	console.log(storageTools);
-	// });
-
-
-
-	
 
 	// KICKSTART VIEW
 	function initHome() {
