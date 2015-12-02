@@ -521,6 +521,7 @@ a {
 }
 .filters {
   cursor: pointer;
+  padding-bottom: 30px;
 }
 .filters ul {
   list-style-type: none;
@@ -540,6 +541,61 @@ a {
   padding-right: 0;
 }
 .filters ul li:hover {
+  color: #424141;
+}
+.tools {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+}
+.tools .group {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 31%;
+}
+.tools a {
+  text-decoration: none;
+}
+.tools .card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #efeeee;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+  min-height: 142px;
+}
+.tools .card:hover {
+  box-shadow: 0 0 7px #EAEAEA;
+  cursor: pointer;
+}
+.tools .card .card__icon {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.tools .card .card__icon img {
+  height: 30px;
+}
+.tools .card .card__title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #424141;
+}
+.tools .card .card__desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6em;
+  letter-spacing: .5px;
   color: #424141;
 }
 @media (max-width: 400px) {
