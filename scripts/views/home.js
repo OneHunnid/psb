@@ -87,7 +87,7 @@ var Home = (function() {
 
 	$('body').on('click', '#filter-chat', function(e) {
 		e.preventDefault();
-		
+
 		filterToSelect = "chat";
 	});
 
@@ -135,8 +135,9 @@ var Home = (function() {
 		    	var toolName = (currentFilter[ item ].name);
 		    	var toolIcon = (currentFilter[ item ].icon);
 		    	var toolDesc = (currentFilter[ item ].desc);
+		    	var toolURL = (currentFilter[ item ].url);
 
-		    	console.log( toolName, toolIcon, toolDesc );
+		    	console.log( toolName, toolIcon, toolDesc, toolURL );
 		    	
 
 		        // console.log( item, currentFilter[ item ], filter );
