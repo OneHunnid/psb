@@ -31,6 +31,18 @@ var Home = (function() {
 	};
 
 
+	var filterData = {
+		toolList: [
+				{
+					name: 'toolName',
+					desc: "lorem ipsum dolar sit amet",
+					icon: "assets/icon_disconnect.png",
+					url: "#"
+				}
+		]
+	};
+
+
 	// Partials
 	var homePartial = $('#partial-banner-home').html();
 		infoPartialCompiled = _.template( homePartial );
@@ -81,7 +93,14 @@ var Home = (function() {
 		    // console.log( currentFilter );
 		    
 		    for( var item in currentFilter ) {
-		        console.log( item, currentFilter[ item ], filter );
+		    	var toolName = (currentFilter[ item ].name);
+		    	var toolIcon = (currentFilter[ item ].icon);
+		    	var toolDesc = (currentFilter[ item ].desc);
+
+		    	console.log( toolName, toolIcon, toolDesc );
+		    	
+
+		        // console.log( item, currentFilter[ item ], filter );
 		        // you can access stuff like currentFilter[ item ].desc here
 		    }
 		}
@@ -95,7 +114,7 @@ var Home = (function() {
 		$('#banner').html(infoPartialCompiled( homeData ));
 
 		// load main content
-		$('#main-content').html(toolsPartialCompiled());
+		$('#main-content').html(toolsPartialCompiled( filterData ));
 
 		// bind events
 
