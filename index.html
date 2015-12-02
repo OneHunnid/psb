@@ -75,6 +75,21 @@
 			</ul>
 		</div>
 
+	
+		<ul class="tools">
+			<% for (var i = 0; i < toolList.length; i++) { %>
+				<li class="group">
+					<a href="<%= toolList[ i ].url %>">
+						<div class="card">
+							<div class="card__icon"> <img src="<%= toolList[ i ].icon %>"> </div>
+							<div class="card__title"> <%= toolList[ i ].name %> </div>
+							<div class="card__desc"> <%= toolList[ i ].desc %> </div>
+						</div>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
 	</script>
 
 	<!-- Footer -->
