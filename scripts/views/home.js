@@ -72,6 +72,7 @@ var Home = (function() {
 
 		filterToSelect = "all";
 		setFilter(filterToSelect);
+		e.preventDefault();
 	});
 
 	$('body').on('click', '#filter-browser', function(e) {
@@ -124,18 +125,13 @@ var Home = (function() {
     		var data = snapshot.val();
     		
     		for( var filter in data ) {
-    		    // console.log(filter, '###')
     			if ( filter !== filterToSelect ) {
     				continue;
     			}
     
     		    currentFilter = data[ filter ];
 
-    		    // console.log( "data", data )
-    		    console.log( "This is currentFilter", currentFilter );
     		    $('#main-content').html(toolsPartialCompiled( currentFilter ));
-    		    
-    		    
     		}
     	});
     }
@@ -156,6 +152,3 @@ var Home = (function() {
 		init: initHome
 	};
 })();
-
-
-
