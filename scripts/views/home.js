@@ -31,16 +31,16 @@ var Home = (function() {
 	};
 
 
-	var filterData = {
-		toolList: [
-				{
-					name: 'toolName',
-					desc: "lorem ipsum dolar sit amet",
-					icon: "assets/icon_disconnect.png",
-					url: "#"
-				}
-		]
-	};
+	// var filterData = {
+	// 	toolList: [
+	// 			{
+	// 				name: 'toolName',
+	// 				desc: "lorem ipsum dolar sit amet",
+	// 				icon: "assets/icon_disconnect.png",
+	// 				url: "#"
+	// 			}
+	// 	]
+	// };
 
 
 	// Partials
@@ -83,84 +83,83 @@ var Home = (function() {
 		e.preventDefault();
 
 		filterToSelect = "browser";
+		setFilter(filterToSelect);
 	});
 
 	$('body').on('click', '#filter-chat', function(e) {
 		e.preventDefault();
 
 		filterToSelect = "chat";
+		setFilter(filterToSelect);
 	});
 
 	$('body').on('click', '#filter-email', function(e) {
 		e.preventDefault();
 
 		filterToSelect = "email";
+		setFilter(filterToSelect);
 	});
 
 	$('body').on('click', '#filter-encryption', function(e) {
 		e.preventDefault();
 
 		filterToSelect = "encryption";
+		setFilter(filterToSelect);
 	});
 
 	$('body').on('click', '#filter-os', function(e) {
 		e.preventDefault();
 
 		filterToSelect = "os";
+		setFilter(filterToSelect);
 	});
 
 	$('body').on('click', '#filter-storage', function(e) {
 		e.preventDefault();
 
 		filterToSelect = "storage";
+		setFilter(filterToSelect);
 	});
 
 
 
-	var filterToSelect = "all";
-
-	// Retrieving data from Firebase
-	myFirebaseRef.once("value", function(snapshot) {
-		var data = snapshot.val();
-		
-		for( var filter in data ) {
-			if ( filter !== filterToSelect ) {
-				continue;
-			}
-
-		    var currentFilter = data[ filter ];
-		    // console.log( currentFilter );
-		    
-		    for( var item in currentFilter ) {
-		    	var toolName = (currentFilter[ item ].name);
-		    	var toolIcon = (currentFilter[ item ].icon);
-		    	var toolDesc = (currentFilter[ item ].desc);
-		    	var toolURL = (currentFilter[ item ].url);
-
-		    	console.log( toolName, toolIcon, toolDesc, toolURL );
-		    	
-
-		        // console.log( item, currentFilter[ item ], filter );
-		        // you can access stuff like currentFilter[ item ].desc here
-		    }
-		}
-	});
+    function setFilter( filterToSelect ) {
+    	// Retrieving data from Firebase
+    	myFirebaseRef.once("value", function(snapshot) {
+    		var data = snapshot.val();
+    		
+    		for( var filter in data ) {
+    		    console.log(filter, '###')
+    			if ( filter !== filterToSelect ) {
+    				continue;
+    			}
+    
+    		    var currentFilter = data[ filter ];
+    		    console.log( "data", data )
+    		    console.log( "This is currentFilter", currentFilter );
+    		    $('#main-content').html(toolsPartialCompiled( currentFilter ));
+    		    
+    		    
+    		}
+    	});
+    }
 
 
 	// KICKSTART VIEW
 	function initHome() {
-
+        
 		// load banner content
 		$('#banner').html(infoPartialCompiled( homeData ));
 
 		// load main content
-		$('#main-content').html(toolsPartialCompiled( filterData ));
+		setFilter('all');
 
-		// bind events
-
+		
 	}
 	return {
 		init: initHome
 	};
-
 })();
+
+
+
