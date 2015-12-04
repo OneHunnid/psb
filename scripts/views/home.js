@@ -31,18 +31,6 @@ var Home = (function() {
 	};
 
 
-	// var filterData = {
-	// 	toolList: [
-	// 			{
-	// 				name: 'toolName',
-	// 				desc: "lorem ipsum dolar sit amet",
-	// 				icon: "assets/icon_disconnect.png",
-	// 				url: "#"
-	// 			}
-	// 	]
-	// };
-
-
 	// Partials
 	var homePartial = $('#partial-banner-home').html();
 		infoPartialCompiled = _.template( homePartial );
@@ -79,6 +67,13 @@ var Home = (function() {
 
 	// Filter navigation buttons
 
+	$('body').on('click', '#filter-all', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "all";
+		setFilter(filterToSelect);
+	});
+
 	$('body').on('click', '#filter-browser', function(e) {
 		e.preventDefault();
 
@@ -110,7 +105,7 @@ var Home = (function() {
 	$('body').on('click', '#filter-os', function(e) {
 		e.preventDefault();
 
-		filterToSelect = "os";
+		filterToSelect = "OS";
 		setFilter(filterToSelect);
 	});
 
@@ -129,13 +124,14 @@ var Home = (function() {
     		var data = snapshot.val();
     		
     		for( var filter in data ) {
-    		    console.log(filter, '###')
+    		    // console.log(filter, '###')
     			if ( filter !== filterToSelect ) {
     				continue;
     			}
     
-    		    var currentFilter = data[ filter ];
-    		    console.log( "data", data )
+    		    currentFilter = data[ filter ];
+
+    		    // console.log( "data", data )
     		    console.log( "This is currentFilter", currentFilter );
     		    $('#main-content').html(toolsPartialCompiled( currentFilter ));
     		    
