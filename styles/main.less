@@ -199,7 +199,6 @@ a {
 *******************************/
 
 .filters {
-	cursor: pointer;
     padding-bottom: 30px;
 
 	ul {
@@ -208,6 +207,7 @@ a {
 	    padding: 0;
 
 		li {
+			cursor: pointer;
 			display: inline-block;
 			padding-right: 15px;
 			color: #717171;
@@ -219,6 +219,10 @@ a {
 			&:last-child { padding-right: 0; }
 
 			&:hover {
+				color: #424141;
+			}
+
+			&:active {
 				color: #424141;
 			}
 		}
