@@ -129,7 +129,7 @@ var Home = (function() {
 
     		    currentFilter = data[ filter ];
 
-    		    $('#main-content').html(toolsPartialCompiled( currentFilter ));
+    		    $('#tools').html(toolsPartialCompiled( currentFilter )).hide().fadeIn("slow");
     		}
     	});
     }
@@ -143,7 +143,6 @@ var Home = (function() {
 
 		// load main content
 		setFilter('all');
-
 
 	}
 	return {
