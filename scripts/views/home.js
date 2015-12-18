@@ -134,6 +134,14 @@ var Home = (function() {
     	});
     }
 
+	function setActive() {
+		$('#filters').on('click','li',function(){
+			$('#filters li.active').removeClass('active');
+			$(this).addClass('active');
+		});
+	}
+
+	setActive();
 
 	// KICKSTART VIEW
 	function initHome() {
