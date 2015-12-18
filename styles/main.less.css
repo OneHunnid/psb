@@ -544,7 +544,7 @@ a {
 .filters ul li:hover {
   color: #424141;
 }
-.filters ul li:active {
+.filters ul li.active {
   color: #424141;
 }
 /* Tools
