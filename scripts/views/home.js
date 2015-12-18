@@ -36,12 +36,12 @@ var Home = (function() {
 		infoPartialCompiled = _.template( homePartial );
 
 	var faqPartial = $('#partial-banner-faq').html();
-		faqPartialCompiled = _.template( faqPartial );	
+		faqPartialCompiled = _.template( faqPartial );
 
 	var submitPartial = $('#partial-banner-submit').html();
 		submitPartialCompiled = _.template( submitPartial );
 
-	var toolsPartial =$('#partial-tools').html();
+	var toolsPartial = $('#partial-tools').html();
 		toolsPartialCompiled = _.template( toolsPartial );
 
 
@@ -50,19 +50,19 @@ var Home = (function() {
 	$('body').on('click','#nav-home', function(e) {
 		e.preventDefault();
 
-		$('#banner').html(infoPartialCompiled( homeData ));
+		$('#banner').html(infoPartialCompiled( homeData )).hide().fadeIn("slow");
 	});
 
 	$('body').on('click','#nav-faq', function(e) {
 		e.preventDefault();
 
-		$('#banner').html(faqPartialCompiled( faqData ));
+		$('#banner').html(faqPartialCompiled( faqData )).hide().fadeIn("slow");
 	});
 
 	$('body').on('click','#nav-submit', function(e) {
 		e.preventDefault();
 
-		$('#banner').html(submitPartialCompiled( submitData ));
+		$('#banner').html(submitPartialCompiled( submitData )).hide().fadeIn("slow");
 	});
 
 	// Filter navigation buttons
@@ -72,7 +72,6 @@ var Home = (function() {
 
 		filterToSelect = "all";
 		setFilter(filterToSelect);
-		e.preventDefault();
 	});
 
 	$('body').on('click', '#filter-browser', function(e) {
@@ -118,17 +117,16 @@ var Home = (function() {
 	});
 
 
-
     function setFilter( filterToSelect ) {
     	// Retrieving data from Firebase
     	myFirebaseRef.once("value", function(snapshot) {
     		var data = snapshot.val();
-    		
+
     		for( var filter in data ) {
     			if ( filter !== filterToSelect ) {
     				continue;
     			}
-    
+
     		    currentFilter = data[ filter ];
 
     		    $('#main-content').html(toolsPartialCompiled( currentFilter ));
@@ -139,14 +137,14 @@ var Home = (function() {
 
 	// KICKSTART VIEW
 	function initHome() {
-        
+
 		// load banner content
 		$('#banner').html(infoPartialCompiled( homeData ));
 
 		// load main content
 		setFilter('all');
 
-		
+
 	}
 	return {
 		init: initHome
