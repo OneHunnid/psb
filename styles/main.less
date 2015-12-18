@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #010101; 
+  color: #010101;
   background-color: #f8f8f8;
 
   -webkit-font-smoothing: antialiased;
@@ -27,26 +27,26 @@ body {
   position: relative;
   width: 100%;
   max-width: 1110px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 0 20px;
   clear: both;
 }
 
 
-h1 { 
-	font-size: 4.0rem; 
+h1 {
+	font-size: 4.0rem;
 	line-height: 1.6rem;
 	margin: 0;
 }
 
-h2 { 
-	font-size: 3.6rem; 
+h2 {
+	font-size: 3.6rem;
 	line-height: 1.6rem;
 	margin: 0;
 }
 
-h3 { 
-	font-size: 3.0rem; 
+h3 {
+	font-size: 3.0rem;
 	line-height: 1.6rem;
 	margin: 0;
 }
@@ -81,7 +81,7 @@ a {
 	ul {
 	    margin: 0;
 	    padding: 0;
-		
+
 		li {
 			display: inline;
 			padding-right: 10px;
@@ -110,7 +110,7 @@ a {
 	    font-size: 12px;
 	    font-weight: 600;
 	    letter-spacing: .5px;
-	
+
 	    &:hover {
 	    	opacity: .8;
 	    }
@@ -196,6 +196,9 @@ a {
 	padding: 50px 0;
 }
 
+/* Filters
+*******************************/
+
 .filters {
 	cursor: pointer;
     padding-bottom: 30px;
@@ -223,6 +226,9 @@ a {
 	}
 }
 
+/* Tools
+*******************************/
+
 .tools {
     position: relative;
     display: flex;
@@ -239,10 +245,9 @@ a {
     -webkit-align-items: flex-start;
 
     .group {
-        margin: 0 auto;
-        margin-bottom: 20px;
+		width: 33.3333%;
         text-align: center;
-        width: 31%;
+        padding: 10px;
     }
 
     a {
@@ -288,7 +293,21 @@ a {
     }
 }
 
+@media (max-width: 900px) {
+	.tools {
+		.group {
+			width:50%;
+		}
+	}
+}
 
+@media (max-width: 555px) {
+	.tools {
+		.group {
+			width:100%;
+		}
+	}
+}
 
 @media (max-width: 400px) {
 
@@ -315,11 +334,3 @@ a {
     }
 
 }
-
-
-
-
-
-
-
-
