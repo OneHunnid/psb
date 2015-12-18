@@ -33,7 +33,20 @@
 
 	<!-- Main Content -->
 	<main class="main">
-		<div class="container" id="main-content"></div>
+		<div class="container" id="main-content">
+			<div class="filters">
+				<ul>
+					<li id="filter-all">All Categories</li>
+					<li id="filter-browser">Browser</li>
+					<li id="filter-chat">Chat</li>
+					<li id="filter-email">Email</li>
+					<li id="filter-encryption">Encryption</li>
+					<li id="filter-os">os</li>
+					<li id="filter-storage">Storage</li>
+				</ul>
+			</div>
+			<div id="tools"></div>
+		</div>
 	</main> <!-- End Main Content -->
 
 	<!-- Banner Partial Home -->
@@ -63,19 +76,6 @@
 
 	<!-- Filter & Tools Partial -->
 	<script id="partial-tools" type="underscore/template">
-		<div class="filters">
-			<ul>
-				<li id="filter-all">All Categories</li>
-				<li id="filter-browser">Browser</li>
-				<li id="filter-chat">Chat</li>
-				<li id="filter-email">Email</li>
-				<li id="filter-encryption">Encryption</li>
-				<li id="filter-os">os</li>
-				<li id="filter-storage">Storage</li>
-			</ul>
-		</div>
-
-
 		<ul class="tools">
 			<% for (var i in currentFilter) { %>
 				<li class="group">
@@ -89,7 +89,6 @@
 				</li>
 			<% } %>
 		</ul>
-
 	</script>
 
 	<!-- Footer -->
