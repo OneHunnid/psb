@@ -404,6 +404,7 @@ h3 {
 }
 a {
   text-decoration: none;
+  color: #fff;
 }
 /* Variables
 *******************************/
@@ -418,6 +419,7 @@ a {
   background: linear-gradient(90deg, #514378, #42346b);
   border-top: solid 4px #fff;
   padding-top: 10px;
+  min-height: 460px;
 }
 .navigation {
   float: left;
@@ -460,6 +462,9 @@ a {
 .banner {
   padding: 125px 20px 175px 20px;
   color: #fff;
+}
+.banner a {
+  border-bottom: 1px solid #fff;
 }
 .banner .banner__title {
   font-size: 40px;
