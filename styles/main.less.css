@@ -623,6 +623,9 @@ a {
   }
 }
 @media (max-width: 400px) {
+  .header {
+    min-height: 389px;
+  }
   .navigation {
     width: 100%;
     text-align: center;
