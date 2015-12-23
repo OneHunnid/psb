@@ -12,7 +12,7 @@ var Home = (function() {
 		list: [
 				{
 					question: 'What\'s the deal?',
-					answer: 'Our online privacy and security is extremely important. That’s why we’ve curated a list of tools to help keep you safe online.'
+					answer: 'Privacy and security is extremely important. That’s why we’ve curated a list of tools to help keep you safe online.'
 				},
 				{
 					question: 'Why do I care?',
@@ -27,31 +27,9 @@ var Home = (function() {
 
 	var submitData = {
 		title: 'Submit a tool',
-		desc: 'If you know a tool that should be added to our list, send a tweet to @climbrick.'
+		desc: 'Have a suggestion? Send a tweet to @climbrick.'
 	};
 
-	var opts = {
-		  lines: 13 // The number of lines to draw
-		, length: 28 // The length of each line
-		, width: 14 // The line thickness
-		, radius: 42 // The radius of the inner circle
-		, scale: .15 // Scales overall size of the spinner
-		, corners: 1 // Corner roundness (0..1)
-		, color: '#000' // #rgb or #rrggbb or array of colors
-		, opacity: 0.25 // Opacity of the lines
-		, rotate: 0 // The rotation offset
-		, direction: 1 // 1: clockwise, -1: counterclockwise
-		, speed: 1 // Rounds per second
-		, trail: 60 // Afterglow percentage
-		, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
-		, zIndex: 2e9 // The z-index (defaults to 2000000000)
-		, className: 'spinner' // The CSS class to assign to the spinner
-		, top: '50%' // Top position relative to parent
-		, left: '50%' // Left position relative to parent
-		, shadow: false // Whether to render a shadow
-		, hwaccel: false // Whether to use hardware acceleration
-		, position: 'absolute' // Element positioning
-	}
 
 	// partials
 	var homePartial = $('#partial-banner-home').html();
@@ -101,31 +79,24 @@ var Home = (function() {
 		setFilter(filterToSelect);
 	});
 
-	$('body').on('click', '#filter-chat', function(e) {
+	$('body').on('click', '#filter-communication', function(e) {
 		e.preventDefault();
 
-		filterToSelect = "chat";
-		setFilter(filterToSelect);
-	});
-
-	$('body').on('click', '#filter-email', function(e) {
-		e.preventDefault();
-
-		filterToSelect = "email";
-		setFilter(filterToSelect);
-	});
-
-	$('body').on('click', '#filter-encryption', function(e) {
-		e.preventDefault();
-
-		filterToSelect = "encryption";
+		filterToSelect = "communication";
 		setFilter(filterToSelect);
 	});
 
 	$('body').on('click', '#filter-os', function(e) {
 		e.preventDefault();
 
-		filterToSelect = "OS";
+		filterToSelect = "os";
+		setFilter(filterToSelect);
+	});
+
+	$('body').on('click', '#filter-password', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "password";
 		setFilter(filterToSelect);
 	});
 
@@ -133,6 +104,13 @@ var Home = (function() {
 		e.preventDefault();
 
 		filterToSelect = "storage";
+		setFilter(filterToSelect);
+	});
+
+	$('body').on('click', '#filter-vpn', function(e) {
+		e.preventDefault();
+
+		filterToSelect = "vpn";
 		setFilter(filterToSelect);
 	});
 
@@ -161,6 +139,28 @@ var Home = (function() {
 	}
 
 	function setSpinner() {
+		var opts = {
+			  lines: 13 // The number of lines to draw
+			, length: 28 // The length of each line
+			, width: 14 // The line thickness
+			, radius: 42 // The radius of the inner circle
+			, scale: .15 // Scales overall size of the spinner
+			, corners: 1 // Corner roundness (0..1)
+			, color: '#000' // #rgb or #rrggbb or array of colors
+			, opacity: 0.25 // Opacity of the lines
+			, rotate: 0 // The rotation offset
+			, direction: 1 // 1: clockwise, -1: counterclockwise
+			, speed: 1 // Rounds per second
+			, trail: 60 // Afterglow percentage
+			, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+			, zIndex: 2e9 // The z-index (defaults to 2000000000)
+			, className: 'spinner' // The CSS class to assign to the spinner
+			, top: '50%' // Top position relative to parent
+			, left: '50%' // Left position relative to parent
+			, shadow: false // Whether to render a shadow
+			, hwaccel: false // Whether to use hardware acceleration
+			, position: 'absolute' // Element positioning
+		}
 		var target = document.getElementById('tools')
 		var spinner = new Spinner(opts).spin(target);
 	}
