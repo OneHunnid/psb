@@ -38,11 +38,11 @@
 				<ul>
 					<li id="filter-all" class="active">All Categories</li>
 					<li id="filter-browser">Browser</li>
-					<li id="filter-chat">Chat</li>
-					<li id="filter-email">Email</li>
-					<li id="filter-encryption">Encryption</li>
+					<li id="filter-communication">Chat & Email</li>
+					<li id="filter-password">Password</li>
 					<li id="filter-os">Operating System</li>
 					<li id="filter-storage">Storage</li>
+					<li id="filter-vpn">VPN</li>
 				</ul>
 			</div>
 			<div id="tools" class="toolsContainer"></div>
@@ -79,7 +79,7 @@
 		<ul class="tools">
 			<% for (var i in currentFilter) { %>
 				<li class="group">
-					<a href="<%= currentFilter[ i ].url %>">
+					<a href="<%= currentFilter[ i ].url %>" target="_blank">
 						<div class="card">
 							<div class="card__icon"> <img src="<%= currentFilter[ i ].icon %>"> </div>
 							<div class="card__title"> <%= currentFilter[ i ].name %> </div>
@@ -110,7 +110,7 @@
 
 	<!-- ROUTER DIRECTOR -->
 		<script src="scripts/app.js"></script>
-		
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
