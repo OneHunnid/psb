@@ -15,6 +15,11 @@
 </head>
 <body>
 
+	<!-- Redirect user to static page if js is disabled.-->
+	<noscript>
+		<meta http-equiv="refresh" content="0; URL=/noscript.html" />
+	</noscript>
+
 	<!-- Header -->
 	<header class="header">
 		<div class="container">
@@ -109,7 +114,7 @@
 	<script src="scripts/views/home.js"></script>
 
 	<!-- ROUTER DIRECTOR -->
-		<script src="scripts/app.js"></script>
+	<script src="scripts/app.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
